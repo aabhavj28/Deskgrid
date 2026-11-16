@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deskgrid – PC &amp; Laptop Accessories</title>
+<meta name="description" content="Keyboards, mice, monitors, stands, hubs and more for your PC or laptop setup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080a1c; --panel:#10132b; --panel2:#171b3d; --line:#272c5a;
+  --text:#e9ebff; --mute:#9a9fcf; --cyan:#22e5ff; --pink:#ff3df0; --lime:#b6ff3b;
+  --display:"Chakra Petch","Segoe UI",system-ui,sans-serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 1rem/1.6 var(--body);
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;background-position:-1px -1px;background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 70% 0%,rgba(255,61,240,.16),transparent 55%),radial-gradient(ellipse at 10% 30%,rgba(34,229,255,.12),transparent 50%),var(--bg);opacity:.93;z-index:-1}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(8,10,28,.72);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:700 1.35rem var(--display);letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+.logo i{width:22px;height:22px;border-radius:6px;background:conic-gradient(var(--cyan),var(--pink),var(--lime),var(--cyan));box-shadow:0 0 18px rgba(34,229,255,.6)}
+nav ul{display:flex;gap:28px;list-style:none;font-size:.95rem;color:var(--mute)}
+nav ul a:hover{color:var(--text)}
+.btn{display:inline-block;font:600 1rem var(--display);padding:12px 22px;border-radius:10px;border:1px solid var(--cyan);color:var(--bg);background:var(--cyan);transition:box-shadow .2s,transform .2s}
+.btn:hover{box-shadow:0 0 26px rgba(34,229,255,.7);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--pink);box-shadow:0 0 22px rgba(255,61,240,.4)}
+
+/* hero */
+.hero{padding:88px 0 72px;text-align:center}
+.tag{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:var(--panel);padding:6px 14px;border-radius:99px;font-size:.85rem;color:var(--mute)}
+.tag b{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime)}
+h1{font:700 clamp(2.6rem,7vw,5.2rem)/1.02 var(--display);letter-spacing:-.01em;margin:22px auto 20px;max-width:15ch}
+.sub{max-width:54ch;margin:0 auto 30px;color:var(--mute);font-size:1.1rem}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* keyboard */
+.kb-wrap{margin:56px auto 0;max-width:760px}
+.kb{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:22px 22px 18px;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(255,61,240,.12);transform:perspective(1100px) rotateX(14deg);transition:transform .4s}
+.kb:hover{transform:perspective(1100px) rotateX(5deg)}
+.row{display:flex;justify-content:center;gap:8px;margin-bottom:8px}
+.row:nth-child(2){padding-left:18px}.row:nth-child(3){padding-left:42px}
+.key{width:clamp(26px,6.6vw,52px);aspect-ratio:1;border-radius:9px;background:#0b0d22;border:1px solid var(--k,var(--line));color:var(--k,var(--mute));
+  font:600 clamp(.6rem,1.8vw,.9rem) var(--display);display:grid;place-items:center;cursor:pointer;user-select:none;
+  box-shadow:0 0 12px -2px var(--k,transparent),inset 0 -3px 0 rgba(255,255,255,.04);transition:transform .08s}
+.key.hit{transform:translateY(3px);background:var(--k);color:#000;box-shadow:0 0 30px 4px var(--k)}
+.key.space{width:clamp(150px,38vw,300px);aspect-ratio:auto;height:clamp(26px,6.6vw,52px)}
+.hint{margin-top:18px;font-size:.9rem;color:var(--mute)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:20px 0 90px}
+.stats div{background:var(--panel);padding:26px 24px}
+.stats strong{display:block;font:700 1.7rem var(--display);color:var(--cyan)}
+.stats span{color:var(--mute);font-size:.95rem}
+
+/* shop */
+h2{font:700 clamp(1.9rem,4vw,2.8rem)/1.1 var(--display);margin-bottom:10px}
+.lead{color:var(--mute);max-width:56ch;margin-bottom:28px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.chip{font:600 .95rem var(--display);padding:9px 18px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--mute);cursor:pointer;transition:.2s}
+.chip:hover{color:var(--text);border-color:var(--cyan)}
+.chip[aria-pressed="true"]{background:var(--cyan);border-color:var(--cyan);color:var(--bg);box-shadow:0 0 20px rgba(34,229,255,.45)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;transition:border-color .25s,box-shadow .25s}
+.card::after{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--c),transparent)}
+.card:hover{border-color:var(--c);box-shadow:0 0 34px -8px var(--c)}
+.ico{width:64px;height:64px;border-radius:14px;display:grid;place-items:center;background:var(--panel2);border:1px solid var(--line);color:var(--c)}
+.ico svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font:600 1.2rem var(--display)}
+.card p{color:var(--mute);font-size:.93rem;flex:1}
+.specs{display:flex;gap:6px;flex-wrap:wrap}
+.specs span{font-size:.78rem;padding:3px 10px;border-radius:6px;background:var(--panel2);border:1px solid var(--line);color:var(--mute)}
+.buy{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px}
+.price{font:700 1.3rem var(--display)}
+.buy a{font:600 .92rem var(--display);color:var(--c)}
+.buy a:hover{text-decoration:underline}
+
+/* why + footer */
+.why{margin:110px 0 90px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.why div{border-left:2px solid var(--pink);padding:4px 0 4px 20px}
+.why h3{font:600 1.2rem var(--display);margin-bottom:6px}
+.why p{color:var(--mute)}
+.band{border:1px solid var(--line);border-radius:22px;padding:48px 32px;text-align:center;background:linear-gradient(120deg,rgba(34,229,255,.12),rgba(255,61,240,.14));margin-bottom:80px}
+.band p{color:var(--mute);margin:8px auto 24px;max-width:48ch}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mute);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media(max-width:720px){nav ul{display:none}.stats{grid-template-columns:1fr}.hero{padding-top:56px}.row:nth-child(2){padding-left:10px}.row:nth-child(3){padding-left:24px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* scroll + art */
+#bar{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--cyan),var(--pink),var(--lime));z-index:20;box-shadow:0 0 12px var(--cyan)}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .7s ease var(--d,0s),transform .7s ease var(--d,0s),border-color .25s,box-shadow .25s}
+.rv.in{opacity:1;transform:none}
+.kb-wrap{will-change:transform}
+.art{height:150px;border-radius:12px;border:1px solid var(--line);color:var(--c);overflow:hidden;
+  background:radial-gradient(circle at 50% 110%,color-mix(in srgb,var(--c) 28%,transparent),transparent 70%),var(--panel2)}
+.art svg{width:100%;height:100%;transition:transform .5s}
+.card:hover .art svg{transform:scale(1.1) translateY(-4px)}
+.b{fill:#0b0d22;stroke:currentColor;stroke-width:2}
+.g{fill:currentColor;fill-opacity:.14;stroke:none}
+.l{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.k{fill:none;stroke:currentColor;stroke-width:7;stroke-linecap:round;opacity:.85}
+.spin{transform-box:fill-box;transform-origin:center;animation:sp 1.6s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.scene{margin:0 0 100px;text-align:center}
+.scene h2{margin-bottom:10px}.scene .lead{margin:0 auto 18px}
+.scene svg{width:100%;max-width:960px;height:auto;filter:drop-shadow(0 30px 60px rgba(255,61,240,.18))}
+.part{will-change:transform,opacity}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.spin{animation:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top"><i></i>Deskgrid</a>
+    <ul>
+      <li><a href="#gear">Gear</a></li>
+      <li><a href="#why">Why Deskgrid</a></li>
+      <li><a href="#join">Deals</a></li>
+    </ul>
+    <a class="btn" href="#gear">Shop gear</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="tag"><b></b>New: 2026 desk setup picks</span>
+    <h1>Upgrade the gear around your machine</h1>
+    <p class="sub">Keyboards, mice, monitors, stands, hubs and cooling for PCs and laptops, picked for speed, comfort and a setup that looks as good as it runs.</p>
+    <div class="cta">
+      <a class="btn" href="#gear">Browse accessories</a>
+      <a class="btn ghost" href="#why">How we pick</a>
+    </div>
+    <div class="kb-wrap">
+      <div class="kb" id="kb" aria-label="Interactive keyboard demo"></div>
+      <p class="hint">Type on your keyboard or tap the keys.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="stats rv">
+    <div><strong><span data-n="120">120</span>+</strong><span>Accessories tested by hand</span></div>
+    <div><strong>0 ms</strong><span>Patience for laggy gear</span></div>
+    <div><strong><span data-n="30">30</span> days</strong><span>Free returns on every order</span></div>
+  </div>
+
+  <section class="scene" id="setup">
+    <h2 class="rv">Your whole setup, in one scroll</h2>
+    <p class="lead rv">Watch a full desk come together: display, laptop, keyboard, mouse and headset.</p>
+    <svg id="scene" viewBox="0 0 900 420" role="img" aria-label="Illustration of a desk with a monitor, laptop, keyboard, mouse and headset">
+      <defs>
+        <linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22e5ff" stop-opacity=".35"/><stop offset="1" stop-color="#ff3df0" stop-opacity=".35"/></linearGradient>
+        <linearGradient id="rgb" x1="0" x2="1"><stop offset="0" stop-color="#22e5ff"/><stop offset=".5" stop-color="#ff3df0"/><stop offset="1" stop-color="#b6ff3b"/></linearGradient>
+      </defs>
+      <rect x="40" y="372" width="820" height="5" rx="2.5" fill="url(#rgb)"/>
+      <ellipse cx="450" cy="380" rx="380" ry="16" fill="url(#rgb)" opacity=".12"/>
+      <g class="part" data-dx="0" data-dy="-170" style="color:var(--pink)">
+        <rect class="b" x="270" y="50" width="360" height="210" rx="12"/>
+        <rect x="282" y="62" width="336" height="186" rx="6" fill="url(#sg)"/>
+        <path class="l" d="M300 215l60-50 50 30 70-80 60 40 70-60" stroke-width="3"/>
+        <path class="l" d="M450 260v62M385 324h130" stroke-width="3"/>
+      </g>
+      <g class="part" data-dx="-240" data-dy="0" style="color:var(--lime)">
+        <rect class="b" x="60" y="220" width="170" height="104" rx="8"/>
+        <rect class="g" x="68" y="228" width="154" height="88" rx="4"/>
+        <path class="b" d="M38 332h214l-14 28H52z"/>
+      </g>
+      <g class="part" data-dx="0" data-dy="150" style="color:var(--cyan)">
+        <rect class="b" x="310" y="334" width="280" height="34" rx="8"/>
+        <path class="k" d="M326 346h248M326 357h248" stroke-width="6" stroke-dasharray="10 5"/>
+      </g>
+      <g class="part" data-dx="230" data-dy="0" style="color:var(--cyan)">
+        <rect class="b" x="650" y="324" width="36" height="46" rx="17"/>
+        <path class="l" d="M668 324v18M650 342h36"/>
+      </g>
+      <g class="part" data-dx="260" data-dy="-40" style="color:#ffb13b">
+        <path class="l" d="M770 372v-96" stroke-width="3"/>
+        <path class="l" d="M738 292v-6a32 32 0 0 1 64 0v6" stroke-width="5"/>
+        <rect class="b" x="730" y="288" width="16" height="34" rx="7"/>
+        <rect class="b" x="794" y="288" width="16" height="34" rx="7"/>
+      </g>
+    </svg>
+  </section>
+
+  <section id="gear">
+    <h2 class="rv">Pick your category</h2>
+    <p class="lead rv">Filter by what you want to upgrade. Every item works with Windows, macOS and Linux unless noted.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filter products"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="rv"><h3>Tested, not just listed</h3><p>We use each product for at least two weeks before it makes the page.</p></div>
+    <div class="rv" style="--d:.12s"><h3>Plain specs</h3><p>Latency, ports, weight and battery life are listed up front, with no marketing fog.</p></div>
+    <div class="rv" style="--d:.24s"><h3>Fits your setup</h3><p>Every item shows what it plugs into, so a hub or stand never arrives as the wrong size.</p></div>
+  </section>
+
+  <section class="band rv" id="join">
+    <h2>Get price drops in your inbox</h2>
+    <p>One email a week with new gear and the best deals. Unsubscribe any time.</p>
+    <a class="btn" href="mailto:you@example.com?subject=Deskgrid%20deals">Join the list</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Deskgrid. Built for people who tinker.</span>
+    <span>Made with HTML, CSS and a little JavaScript.</span>
+  </div>
+</footer>
+
+<script>
+/* ---------- Edit your products here ---------- */
+const ART={
+  keyboard:'<rect class="b" x="20" y="28" width="160" height="62" rx="9"/><path class="k" d="M36 44h128M36 57h128M36 70h128" stroke-width="8" stroke-dasharray="10 5"/><path class="k" d="M66 82h68"/>',
+  mouse:'<path class="b" d="M100 12c24 0 36 14 36 36v20c0 24-14 36-36 36S64 92 64 68V48c0-22 12-36 36-36z"/><path class="l" d="M100 12v36M64 48h72"/><rect class="k" x="95" y="24" width="10" height="16" rx="5" stroke-width="3"/>',
+  monitor:'<rect class="b" x="30" y="10" width="140" height="80" rx="7"/><rect class="g" x="38" y="18" width="124" height="64"/><path class="l" d="M48 68l22-16 18 10 24-24 40 28" stroke-width="3"/><path class="l" d="M100 90v12M74 104h52"/>',
+  stand:'<path class="b" d="M56 12h88l9 46H47z"/><path class="b" d="M34 62h132l-9 12H43z"/><path class="l" d="M70 76l-14 26M130 76l14 26M48 102h22M130 102h22"/>',
+  hub:'<rect class="b" x="22" y="42" width="156" height="32" rx="9"/><path class="k" d="M42 58h12M66 58h12M90 58h12M114 58h24" stroke-width="10"/><circle cx="160" cy="58" r="3" fill="currentColor"/><path class="l" d="M100 42V22c0-8 8-10 16-10"/>',
+  audio:'<path class="l" d="M54 72V58a46 46 0 0 1 92 0v14" stroke-width="5"/><rect class="b" x="40" y="64" width="28" height="42" rx="11"/><rect class="b" x="132" y="64" width="28" height="42" rx="11"/><path class="l" d="M54 104c0 10 16 12 30 6"/>',
+  storage:'<rect class="b" x="38" y="24" width="124" height="62" rx="13"/><rect class="g" x="38" y="24" width="124" height="62" rx="13"/><path class="k" d="M58 55h42"/><circle cx="140" cy="55" r="5" fill="currentColor"/>',
+  cool:'<path class="b" d="M28 36h144l-10 52H38z"/><g class="l"><circle cx="66" cy="62" r="15"/><circle cx="100" cy="62" r="15"/><circle cx="134" cy="62" r="15"/></g><g class="l"><path class="spin" d="M66 50v24M54 62h24"/><path class="spin" d="M100 50v24M88 62h24"/><path class="spin" d="M134 50v24M122 62h24"/></g>',
+  charger:'<rect class="b" x="64" y="14" width="72" height="62" rx="11"/><path class="k" d="M84 34v14M100 34v14M116 34v14" stroke-width="6"/><path class="l" d="M100 76v18c0 8 8 10 16 10"/>'
+};
+const COLORS={Input:"#22e5ff",Display:"#ff3df0",Laptop:"#b6ff3b",Audio:"#ffb13b",Storage:"#8a7dff",Power:"#22e5ff"};
+const PRODUCTS=[
+ {n:"Pulse 75 Keyboard",c:"Input",i:"keyboard",p:12099,d:"Hot-swappable 75% board with gasket mount and per-key RGB.",s:["Wireless","75%","Hot-swap"]},
+ {n:"Viper Air Mouse",c:"Input",i:"mouse",p:7399,d:"58 g wireless gaming mouse with a 26K DPI sensor.",s:["58 g","2.4 GHz","90 hr"]},
+ {n:"Arc 27 QHD Monitor",c:"Display",i:"monitor",p:30899,d:"27 in IPS panel at 165 Hz with 1 ms response and USB-C input.",s:["1440p","165 Hz","USB-C"]},
+ {n:"Lift Aluminum Stand",c:"Laptop",i:"stand",p:4599,d:"Foldable stand that raises your laptop to eye level and passes heat away.",s:["Foldable","Up to 17 in","890 g"]},
+ {n:"Dock 11-in-1 Hub",c:"Laptop",i:"hub",p:8399,d:"Dual HDMI, Ethernet, SD, USB-A and 100 W power pass-through.",s:["4K60","100 W","Gigabit"]},
+ {n:"Halo Wireless Headset",c:"Audio",i:"audio",p:13999,d:"Low-latency headset with a detachable noise-cancelling mic.",s:["40 hr","ANC mic","Bluetooth"]},
+ {n:"Vault 2 TB NVMe SSD",c:"Storage",i:"storage",p:13099,d:"Pocket-size portable SSD with 2,000 MB/s reads and a rugged shell.",s:["2 TB","USB 3.2","IP65"]},
+ {n:"Breeze Cooling Pad",c:"Laptop",i:"cool",p:3699,d:"Six quiet fans and adjustable height keep laptops cool under load.",s:["6 fans","Up to 18 in","Quiet"]},
+ {n:"Slate 100 W Charger",c:"Power",i:"charger",p:5499,d:"GaN charger with three ports that powers a laptop, phone and tablet at once.",s:["GaN","3 ports","100 W"]}
+];
+
+/* ---------- Interactive keyboard ---------- */
+const rows=["QWERTYUIOP","ASDFGHJKL","ZXCVBNM"];
+const kb=document.getElementById("kb"),keys={};
+rows.forEach(r=>{const el=document.createElement("div");el.className="row";
+  [...r].forEach(ch=>{const k=document.createElement("div");k.className="key";k.textContent=ch;keys[ch]=k;
+    k.addEventListener("pointerdown",()=>flash(ch));el.appendChild(k)});kb.appendChild(el)});
+const sr=document.createElement("div");sr.className="row";
+const sp=document.createElement("div");sp.className="key space";keys[" "]=sp;
+sp.addEventListener("pointerdown",()=>flash(" "));sr.appendChild(sp);kb.appendChild(sr);
+
+const all=Object.values(keys);
+const still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function paint(t){all.forEach((k,i)=>{const h=(i*14+t*0.06)%360;k.style.setProperty("--k","hsl("+h+" 100% 62%)")})}
+(function loop(t){paint(t||0);if(!still)requestAnimationFrame(loop)})();
+function flash(ch){const k=keys[ch.toUpperCase()];if(!k)return;k.classList.add("hit");setTimeout(()=>k.classList.remove("hit"),140)}
+addEventListener("keydown",e=>{if(e.metaKey||e.ctrlKey||e.altKey)return;flash(e.key)});
+
+/* ---------- Shop ---------- */
+const filters=document.getElementById("filters"),grid=document.getElementById("grid");
+const cats=["All",...new Set(PRODUCTS.map(p=>p.c))];
+let active="All";
+function render(){
+  filters.innerHTML="";
+  cats.forEach(c=>{const b=document.createElement("button");b.className="chip";b.textContent=c;
+    b.setAttribute("aria-pressed",c===active);b.onclick=()=>{active=c;render()};filters.appendChild(b)});
+  grid.innerHTML=PRODUCTS.filter(p=>active==="All"||p.c===active).map((p,j)=>
+   `<article class="card rv" style="--c:${COLORS[p.c]};--d:${(j%3)*.08}s">
+      <div class="art"><svg viewBox="0 0 200 116" aria-hidden="true">${ART[p.i]}</svg></div>
+      <h3>${p.n}</h3><p>${p.d}</p>
+      <div class="specs">${p.s.map(x=>`<span>${x}</span>`).join("")}</div>
+      <div class="buy"><span class="price">₹${p.p.toLocaleString("en-IN")}</span><a href="#join">Get this deal</a></div>
+    </article>`).join("");
+  watch();
+}
+
+/* ---------- Scroll effects ---------- */
+const calm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const io="IntersectionObserver" in window&&!calm?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15}):null;
+function watch(){document.querySelectorAll(".rv:not(.in)").forEach(el=>io?io.observe(el):el.classList.add("in"))}
+watch();
+const counters=[...document.querySelectorAll("[data-n]")];
+let counted=false;
+function countUp(){if(counted||calm)return;counted=true;counters.forEach(c=>{const n=+c.dataset.n,t0=performance.now();
+  (function f(t){const p=Math.min((t-t0)/1400,1);c.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)})}
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){countUp();o.disconnect()}},{threshold:.5}).observe(document.querySelector(".stats"));
+const bar=document.getElementById("bar"),kbw=document.querySelector(".kb-wrap"),sc=document.getElementById("scene"),parts=[...sc.querySelectorAll(".part")];
+function onScroll(){
+  const y=scrollY,max=document.documentElement.scrollHeight-innerHeight;
+  bar.style.transform="scaleX("+(max>0?y/max:0)+")";
+  if(calm)return;
+  if(y<innerHeight*1.5){kbw.style.transform="translateY("+(y*.12)+"px)"}
+  const r=sc.getBoundingClientRect(),p=Math.min(Math.max((innerHeight*.9-r.top)/(innerHeight*.55),0),1),e=1-Math.pow(1-p,3);
+  parts.forEach(g=>{g.style.transform="translate("+(g.dataset.dx*(1-e))+"px,"+(g.dataset.dy*(1-e))+"px)";g.style.opacity=e});
+}
+addEventListener("scroll",()=>requestAnimationFrame(onScroll),{passive:true});
+addEventListener("resize",onScroll);onScroll();
+render();
+</script>
+</body>
+</html>
